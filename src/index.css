@@ -9,16 +9,18 @@
 :root {
 	--brand: 279, 72%, 56%;
 	--dark: 183, 100%, 5%;
-	--text: 183, 100%, 15%;
+	--text: 183, 100%, 17%;
 	--neutral1: 186, 14%, 43%;
 	--neutral2: 184, 14%, 56%;
 	--neutral3: 185, 41%, 84%;
 	--neutral4: 189, 41%, 97%;
 	--white: 179, 41%, 99%;
+  --error: 12, 67%, 45%;
 
 	/* utils*/
 
-	--padding: clamp(2rem, 4vw, 3rem);
+	--spacer: clamp(2rem, 4vw, 3rem);
+  --rounded-sm: .3rem;
 }
 
 body {
@@ -27,6 +29,9 @@ body {
 	background-color: hsl(var(--neutral3));
 }
 
+
+/*Display component*/
+
 .wrapper {
 	display: grid;
 	place-items: center;
@@ -34,7 +39,7 @@ body {
 }
 
 .container {
-	padding: var(--padding);
+	padding: var(--spacer);
 	background-color: hsl(var(--white));
 	border-radius: 2rem;
 	box-shadow: 0 1rem 5rem hsl(var(--neutral2));
@@ -43,12 +48,9 @@ body {
 	gap: var(--padding);
 }
 
-.form {
-}
-
 .display {
 	background-color: hsl(var(--text));
-	padding: var(--padding);
+	padding: var(--spacer);
 	border-radius: 0.8rem;
 	display: flex;
 	flex-direction: column;
@@ -57,13 +59,13 @@ body {
 
 .display-group {
 	display: grid;
-	gap: var(--padding);
+	gap: var(--spacer);
 }
 
 .display-row {
 	display: flex;
 	justify-content: space-between;
-	gap: var(--padding);
+	gap: var(--spacer);
 	align-items: center;
 	text-align: left;
 }
@@ -94,7 +96,7 @@ body {
 	color: hsl(var(--text));
   font-weight: bold;
 	border: none;
-	border-radius: 0.4rem;
+	border-radius: var(--rounded-sm);
 	padding: 0.3rem 0.8rem;
 	text-transform: uppercase;
 	font-size: 1rem;
@@ -113,4 +115,77 @@ body {
 
 .btn:not([disabled]):active {
   transform: scale(0.95); 
+}
+
+/*Form component*/
+
+.form{
+  display: grid;
+  gap: var(--spacer);
+
+  padding-right: 1.5rem;
+}
+
+.label-group{
+  display: grid;
+  gap: .2rem;
+  text-align: left;
+}
+
+.label{
+  color: hsl(var(--text));
+	font-size: 1rem;
+  font-weight: bold;
+}
+
+[type="number"]{
+  width: 100%;
+  font: inherit;
+  text-align: right;
+  background-color: hsl(var(--neutral3));
+  border: none;
+  padding: .2rem .5rem;
+  border-radius: var(--rounded-sm);
+}
+
+[type="number"]:focus{
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.icon{
+  position: absolute;
+  top: 50%;
+  left: .5rem;
+  transform: translate(-50%, -50%);
+  margin-left: .7rem;
+  color: hsl(279, 42%, 69%) ;
+  pointer-events: none;
+}
+.number-wrapper{
+  position: relative;
+}
+
+.label-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error{
+  color: hsl(var(--error));
+  font-size: 1rem;
+  font-weight: bold;
 }

@@ -4,13 +4,20 @@ const Form = () => {
 	return (
 		<div className='form'>
 			<div className='label-group'>
-				<label htmlFor='bill'>Bill</label>
-				<input type='number' id='bill' className='label' />
-				<BsCurrencyDollar aria-hidden='true' className='icon' />
+				<div className='label-wrapper'>
+					<label className='label' htmlFor='bill'>
+						Bill
+					</label>
+               <p className='error'></p>
+				</div>
+				<div className='number-wrapper'>
+					<input type='number' id='bill' className='label' />
+					<BsCurrencyDollar aria-hidden='true' className='icon' />
+				</div>
 			</div>
 
 			<div className='tip-section'>
-            <p className="label">Selected Tip %</p>
+				<p className='label'>Selected Tip %</p>
 				<div className='tip-amount-wrapper'>
 					<div className='tip-amount'>
 						<input type='radio' name='tip' value='0.05' />
@@ -38,11 +45,15 @@ const Form = () => {
 
 			<div className='label-group'>
 				<div className='label-wrapper'>
-					<label htmlFor='people'>Number of People</label>
-					<p>Error</p>
+					<label className='label' htmlFor='people'>
+						Number of People
+					</label>
+					<p className='error'></p>
 				</div>
-				<input type='number' id='people' />
-				<BsFillPersonFill aria-hidden='true' className='icon' />
+				<div className='number-wrapper'>
+					<input type='number' id='people' />
+					<BsFillPersonFill aria-hidden='true' className='icon' />
+				</div>
 			</div>
 		</div>
 	)
