@@ -18,7 +18,7 @@ const Display = () => {
 					<p className='display-amt'>$0.00</p>
 				</div>
 			</div>
-			<button className='btn'>Reset</button>
+			<button className='btn' disabled>Reset</button>
 		</div>
 	)
 }
