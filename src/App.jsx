@@ -1,5 +1,7 @@
 // import { useState } from 'react'
 import './App.css'
+import logo from './assets/logo (2).svg'
+
 import Display from './components/Display'
 import Form from './components/Form'
 
@@ -8,11 +10,10 @@ function App() {
 
   return (
     <>
-      <div className='App'>
+      <div className='wrapper'>
+        <img src={logo} alt="Tippity logo" />
         <div className="container">
-          <div className="form">
           <Form />
-          </div>
           <Display/>
         </div>
       </div>

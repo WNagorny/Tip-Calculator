@@ -1,6 +1,6 @@
 const Display = () => {
 	return (
-		<div>
+		<div className="display">
 			<div className='display-row'>
 				<div>
 					<div className='display-label'>

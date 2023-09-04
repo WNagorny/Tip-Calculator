@@ -7,16 +7,49 @@
 }
 
 :root {
-	--brand: 172, 67%, 45%;
+	--brand: 279, 72%, 56%;
 	--text: 183, 100%, 15%;
 	--neutral1: 186, 14%, 43%;
 	--neutral2: 184, 14%, 56%;
 	--neutral3: 185, 41%, 84%;
 	--neutral4: 189, 41%, 97%;
 	--white: 179, 41%, 99%;
+
+	/* utils*/
+
+	--padding: clamp(2rem, 5vw, 4rem);
 }
 
-body{
-  font-family: 'Space Mono', monospace;
-  font-size: 1.5rem;
+body {
+	font-family: 'Space Mono', monospace;
+	font-size: 1.5rem;
+	background-color: hsl(var(--neutral3));
+}
+
+.wrapper {
+	display: grid;
+	place-items: center;
+	gap: 3rem;
+}
+
+.container {
+	padding: var(--padding);
+	background-color: hsl(var(--white));
+	border-radius: 2rem;
+	box-shadow: 0 1rem 5rem hsl(var(--neutral2));
+	display: grid;
+	grid-auto-flow: column;
+	gap: var(--padding);
+}
+
+.form {
+}
+
+.display {
+	background-color: hsl(var(--text));
+	padding: var(--padding);
+	border-radius: .8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
