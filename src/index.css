@@ -21,6 +21,7 @@
 
 	--spacer: clamp(2rem, 4vw, 3rem);
   --rounded-sm: .3rem;
+  --rounded-md: .4rem;
 }
 
 body {
@@ -188,4 +189,43 @@ input[type=number] {
   color: hsl(var(--error));
   font-size: 1rem;
   font-weight: bold;
+}
+
+/*Tip section*/
+
+.tip-section{
+  display: grid;
+  justify-items: start;
+  gap: .5rem;
+}
+
+.tip-amount-wrapper{
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tip-amount{
+  position: relative;
+}
+
+[name="tip"] {
+  position: absolute; 
+  inset: 0;
+  opacity: 0;
+}
+
+.tip-btn{
+  background-color: hsl(var(--text));
+  color: hsl(var(--neutral4));
+  border-radius: var(--rounded-md);
+  padding: .2rem;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .tip-amount-wrapper{
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
