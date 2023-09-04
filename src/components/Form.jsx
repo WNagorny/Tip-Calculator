@@ -1,4 +1,4 @@
-import { BsFillPersonCheckFill, BsCurrencyDollar } from 'react-icons/bs'
+import { BsFillPersonFill, BsCurrencyDollar } from 'react-icons/bs'
 
 const Form = () => {
 	return (
@@ -42,7 +42,7 @@ const Form = () => {
 					<p>Error</p>
 				</div>
 				<input type='number' id='people' />
-				<BsFillPersonCheckFill aria-hidden='true' className='icon' />
+				<BsFillPersonFill aria-hidden='true' className='icon' />
 			</div>
 		</div>
 	)
