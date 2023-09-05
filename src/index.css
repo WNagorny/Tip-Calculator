@@ -245,6 +245,23 @@ input.number-input {
 	padding: 0.2rem;
 }
 
+.custom-wrapper{
+	position: relative;
+}
+
+/* .tip-custom-label{
+	position: absolute;
+	right: .5rem;
+	top: 50%;
+	transform: translateY(-50%);
+} */
+
+input::placeholder {
+	color: hsl(var(--text)); 
+
+ }
+
+
 /* media queries */
 
 @media screen and (min-width: 768px) {
