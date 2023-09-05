@@ -1,6 +1,6 @@
 import { BsFillPersonFill, BsCurrencyDollar } from 'react-icons/bs'
 
-const Form = () => {
+const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt}) => {
 	return (
 		<div className='form'>
 			<div className='label-group'>
@@ -8,10 +8,10 @@ const Form = () => {
 					<label className='label' htmlFor='bill'>
 						Bill
 					</label>
-               <p className='error'></p>
+               <p className='error'>{showBillAmtError ? "Please enter numbers only" : ""}</p>
 				</div>
 				<div className='number-wrapper'>
-					<input type='number' id='bill' className='label' />
+					<input type='text' id='bill' className='number-input ' onInput={handleBillAmtInput} value={billAmt} />
 					<BsCurrencyDollar aria-hidden='true' className='icon' />
 				</div>
 			</div>
@@ -51,7 +51,7 @@ const Form = () => {
 					<p className='error'></p>
 				</div>
 				<div className='number-wrapper'>
-					<input type='number' id='people' />
+					<input type='number' id='people'   className='number-input '/>
 					<BsFillPersonFill aria-hidden='true' className='icon' />
 				</div>
 			</div>
