@@ -8,9 +8,10 @@ import Form from './components/Form'
 
 function App() {
 
-  const[billAmt, setBillAmt] = useState(0);
+  const[billAmt, setBillAmt] = useState("");
   const[showBillAmtError, setShowBillAmtError] = useState(false);
-  const[peopls, setPeopls] = useState(0);
+  const[showPeoplsError, setShowPeoplsError] = useState(false);
+  const[peopls, setPeopls] = useState("");
   const[isTipSelected, setIsTipSelected] = useState(false);
   const[selectedTip, setSelectedTip] = useState(0);
  
@@ -26,8 +27,23 @@ function App() {
     }
   }
 
+
+  
+
   const handleSelectedTip = (e) => {
-    console.log(e.target.value)
+    (e.target.value)
+  }
+
+  const handlePeoplsInput = (e) => {
+    const input = e.target.value;
+    const pattern = /^[0-9]*$/;
+    if(pattern.test(input)) {
+      setShowPeoplsError(false)
+      setPeopls(input)
+    } else{
+      setShowPeoplsError(true)
+    }
+
   }
 
   
@@ -40,7 +56,9 @@ function App() {
           billAmt={billAmt}
             handleBillAmtInput={handleBillAmtInput}
             handleSelectedTip={handleSelectedTip}
+            handlePeoplsInput={handlePeoplsInput}
             showBillAmtError={showBillAmtError}
+            showPeoplsError={showPeoplsError}
           />
 
           <Display/>

@@ -1,6 +1,6 @@
 import { BsFillPersonFill, BsCurrencyDollar } from 'react-icons/bs'
 
-const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt}) => {
+const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt,handlePeoplsInput,peopls,showPeoplsError}) => {
 	return (
 		<div className='form'>
 			<div className='label-group'>
@@ -11,7 +11,7 @@ const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt}) =
                <p className='error'>{showBillAmtError ? "Please enter numbers only" : ""}</p>
 				</div>
 				<div className='number-wrapper'>
-					<input type='text' id='bill' className='number-input ' onInput={handleBillAmtInput} value={billAmt} />
+					<input type='text' id='bill' className='number-input' onInput={handleBillAmtInput} value={billAmt} />
 					<BsCurrencyDollar aria-hidden='true' className='icon' />
 				</div>
 			</div>
@@ -48,10 +48,10 @@ const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt}) =
 					<label className='label' htmlFor='people'>
 						Number of People
 					</label>
-					<p className='error'></p>
+					<p className='error'>{showPeoplsError ? "Please enter numbers only" : ""}</p>
 				</div>
 				<div className='number-wrapper'>
-					<input type='number' id='people'   className='number-input '/>
+					<input type='text' id='people' className='number-input' onInput={handlePeoplsInput} value={peopls}/>
 					<BsFillPersonFill aria-hidden='true' className='icon' />
 				</div>
 			</div>
