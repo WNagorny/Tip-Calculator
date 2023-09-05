@@ -222,19 +222,19 @@ input.number-input {
 	position: relative;
 }
 
-[name='tip'] {
+.tip-input {
 	position: absolute;
 	inset: 0;
 	opacity: 0;
 	cursor: pointer;
 }
 
-[name='tip']:hover + .tip-btn {
+.tip-input:hover + .tip-btn {
 	background-color: hsl(var(--neutral1));
 	color: hsl(var(--text));
 }
 
-[name='tip']:checked + .tip-btn {
+.tip-input:checked + .tip-btn {
 	background-color: hsl(var(--brand));
 }
 
