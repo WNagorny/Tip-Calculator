@@ -13,7 +13,7 @@ function App() {
   const [people, setPeople] = useState('')
   const [calculatedTip, setCalculatedTip] = useState(0)
   const [total, setTotal] = useState(0)
-
+  const [selectedTip, setSelectedTip] = useState('');
   
   useEffect(() => {
 
@@ -24,13 +24,14 @@ function App() {
 
   }, [bill, people, tip, calculatedTip])
 
-  const handleResetBtn = (e) => {
+  const handleResetBtn = () => {
     console.log('reseted')
     setBill('')
     setTip('')
     setPeople('')
     setCalculatedTip(0)
     setTotal(0)
+    setSelectedTip(''); // Deselect the radio input
   }
 
 
@@ -46,6 +47,8 @@ function App() {
             setTip={setTip}
             people={people}
             setPeople={setPeople}
+            setSelectedTip={setSelectedTip}
+            selectedTip={selectedTip}
           />
 
           <Display

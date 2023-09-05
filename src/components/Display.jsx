@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Display = ({calculatedTip, total, people, handleResetBtn}) => {
 
 	const returnCurrentAmt = (amt) => {
@@ -34,5 +36,12 @@ const Display = ({calculatedTip, total, people, handleResetBtn}) => {
 		</div>
 	)
 }
+
+Display.propTypes = {
+	calculatedTip: PropTypes.number.isRequired, // Assuming calculatedTip is a number
+	total: PropTypes.number.isRequired, // Assuming total is a number
+	people: PropTypes.number.isRequired, // Assuming people is a number
+	handleResetBtn: PropTypes.func.isRequired, // Assuming handleResetBtn is a function
+ };
 
 export default Display
