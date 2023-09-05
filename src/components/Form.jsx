@@ -1,6 +1,6 @@
 import { BsFillPersonFill, BsCurrencyDollar } from 'react-icons/bs'
 
-const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt,handlePeoplsInput,peopls,showPeoplsError}) => {
+const Form = ({bill, setBill, people, setPeople}) => {
 	return (
 		<div className='form'>
 			<div className='label-group'>
@@ -8,10 +8,10 @@ const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt,han
 					<label className='label' htmlFor='bill'>
 						Bill
 					</label>
-               <p className='error'>{showBillAmtError ? "Please enter numbers only" : ""}</p>
+               {/* <p className='error'>{showBillAmtError ? "Please enter numbers only" : ""}</p> */}
 				</div>
 				<div className='number-wrapper'>
-					<input type='text' id='bill' className='number-input' onInput={handleBillAmtInput} value={billAmt} />
+					<input type='number' id='bill' className='number-input' onInput={(e) =>setBill(+e.target.value)} />
 					<BsCurrencyDollar aria-hidden='true' className='icon' />
 				</div>
 			</div>
@@ -20,24 +20,24 @@ const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt,han
 				<p className='label'>Selected Tip %</p>
 				<div className='tip-amount-wrapper'>
 					<div className='tip-amount'>
-						<input type='radio' name='tip' value='0.05' />
-						<div className='tip-btn'>5%</div>
+						<input type='radio' name='tip' value='5' id="input1" />
+						<label className='tip-btn' htmlFor='input1'>5%</label>
 					</div>
 					<div className='tip-amount'>
-						<input type='radio' name='tip' value='0.1' />
-						<div className='tip-btn'>10%</div>
+						<input type='radio' name='tip' value='10' id="input2" />
+						<label className='tip-btn'  htmlFor='input2'>10%</label>
 					</div>
 					<div className='tip-amount'>
-						<input type='radio' name='tip' value='0.15' />
-						<div className='tip-btn'>15%</div>
+						<input type='radio' name='tip' value='15' id="input3" />
+						<label className='tip-btn'  htmlFor='input3'>15%</label>
 					</div>
 					<div className='tip-amount'>
-						<input type='radio' name='tip' value='0.25' />
-						<div className='tip-btn'>25%</div>
+						<input type='radio' name='tip' value='25' id="input4"/>
+						<label className='tip-btn'  htmlFor='input4'>25%</label>
 					</div>
 					<div className='tip-amount'>
-						<input type='radio' name='tip' value='0.50' />
-						<div className='tip-btn'>50%</div>
+						<input type='radio' name='tip' value='50' id="input5"/>
+						<label className='tip-btn'  htmlFor='input5'>50%</label>
 					</div>
 					<input type='number' className='tip-customer' />
 				</div>
@@ -48,10 +48,10 @@ const Form = ({handleBillAmtInput,handleSelectedTip,showBillAmtError,billAmt,han
 					<label className='label' htmlFor='people'>
 						Number of People
 					</label>
-					<p className='error'>{showPeoplsError ? "Please enter numbers only" : ""}</p>
+					{/* <p className='error'>{showPeoplsError ? "Please enter numbers only" : ""}</p> */}
 				</div>
 				<div className='number-wrapper'>
-					<input type='text' id='people' className='number-input' onInput={handlePeoplsInput} value={peopls}/>
+					<input type='number' id='people' className='number-input' onInput={(e) => setPeople(+e.target.value)}/>
 					<BsFillPersonFill aria-hidden='true' className='icon' />
 				</div>
 			</div>

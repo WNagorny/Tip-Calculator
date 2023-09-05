@@ -8,44 +8,8 @@ import Form from './components/Form'
 
 function App() {
 
-  const[billAmt, setBillAmt] = useState("");
-  const[showBillAmtError, setShowBillAmtError] = useState(false);
-  const[showPeoplsError, setShowPeoplsError] = useState(false);
-  const[peopls, setPeopls] = useState("");
-  const[isTipSelected, setIsTipSelected] = useState(false);
-  const[selectedTip, setSelectedTip] = useState(0);
- 
-
-  const handleBillAmtInput = (e) => {
-    const input = e.target.value;
-    const pattern = /^[0-9.]*$/;
-    if(pattern.test(input)) {
-      setShowBillAmtError(false)
-      setBillAmt(input)
-    } else{
-      setShowBillAmtError(true)
-    }
-  }
-
-
-  
-
-  const handleSelectedTip = (e) => {
-    (e.target.value)
-  }
-
-  const handlePeoplsInput = (e) => {
-    const input = e.target.value;
-    const pattern = /^[0-9]*$/;
-    if(pattern.test(input)) {
-      setShowPeoplsError(false)
-      setPeopls(input)
-    } else{
-      setShowPeoplsError(true)
-    }
-
-  }
-
+  const [bill, setBill] = useState('')
+  const [people, setPeople] = useState('')
   
   return (
     <>
@@ -53,12 +17,10 @@ function App() {
         <img src={logo} alt="Tippity logo" />
         <div className="container">
           <Form 
-          billAmt={billAmt}
-            handleBillAmtInput={handleBillAmtInput}
-            handleSelectedTip={handleSelectedTip}
-            handlePeoplsInput={handlePeoplsInput}
-            showBillAmtError={showBillAmtError}
-            showPeoplsError={showPeoplsError}
+            bill={bill}
+            setBill={setBill}
+            people={people}
+            setPeople={setPeople}
           />
 
           <Display/>
