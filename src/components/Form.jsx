@@ -1,19 +1,24 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { BsFillPersonFill, BsCurrencyDollar } from 'react-icons/bs'
 
-const Form = ({ bill, setBill, people, setPeople, setTip, setSelectedTip,selectedTip }) => {
-
-	
-
+const Form = ({
+	bill,
+	setBill,
+	people,
+	setPeople,
+	setTip,
+	setSelectedTip,
+	selectedTip,
+}) => {
 	const handleSelectedTip = e => {
-		const selectedValue = e.target.value;
-		setSelectedTip(e.target.value);
+		const selectedValue = e.target.value
+		setSelectedTip(e.target.value)
 
 		setTip(+e.target.value)
 
 		if (['5', '10', '15', '25', '50'].includes(selectedValue)) {
 			// Clear the custom tip input field by setting it to an empty string
-			document.getElementById('custom').value = '';
+			document.getElementById('custom').value = ''
 		}
 	}
 
@@ -31,8 +36,10 @@ const Form = ({ bill, setBill, people, setPeople, setTip, setSelectedTip,selecte
 						type='number'
 						id='bill'
 						className='number-input'
-						onInput={e => setBill(+e.target.value)}
-						value={bill}
+						onChange={e =>
+							setBill(e.target.value === '' ? '' : +e.target.value)
+						}
+						value={bill === '' ? '' : bill}
 					/>
 					<BsCurrencyDollar aria-hidden='true' className='icon' />
 				</div>
@@ -120,7 +127,7 @@ const Form = ({ bill, setBill, people, setPeople, setTip, setSelectedTip,selecte
 							onChange={handleSelectedTip}
 							placeholder='Custom'
 						/>
-						<label htmlFor="custom" className='tip-custom-label'></label>
+						<label htmlFor='custom' className='tip-custom-label'></label>
 					</div>
 				</div>
 			</div>
@@ -137,8 +144,10 @@ const Form = ({ bill, setBill, people, setPeople, setTip, setSelectedTip,selecte
 						type='number'
 						id='people'
 						className='number-input'
-						onInput={e => setPeople(+e.target.value)}
-						value={people}
+						onChange={e =>
+							setPeople(e.target.value === '' ? '' : +e.target.value)
+						}
+						value={people === '' ? '' : people}
 					/>
 					<BsFillPersonFill aria-hidden='true' className='icon' />
 				</div>
@@ -146,6 +155,7 @@ const Form = ({ bill, setBill, people, setPeople, setTip, setSelectedTip,selecte
 		</div>
 	)
 }
+
 Form.propTypes = {
 	bill: PropTypes.number.isRequired,
 	setBill: PropTypes.func.isRequired,
@@ -154,7 +164,7 @@ Form.propTypes = {
 	tip: PropTypes.number.isRequired,
 	setTip: PropTypes.func.isRequired,
 	setSelectedTip: PropTypes.func.isRequired,
-	selectedTip: PropTypes.func.isRequired
- };
+	selectedTip: PropTypes.number.isRequired,
+}
 
 export default Form
