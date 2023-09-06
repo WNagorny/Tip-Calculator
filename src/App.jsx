@@ -31,6 +31,8 @@ function App() {
     setCalculatedTip(0)
     setTotal(0)
     setSelectedTip(''); // Deselect the radio input
+    
+    document.getElementById('custom').value = '';
   }
 
 
