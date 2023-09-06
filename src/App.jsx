@@ -25,7 +25,6 @@ function App() {
   }, [bill, people, tip, calculatedTip])
 
   const handleResetBtn = () => {
-    console.log('reseted')
     setBill('')
     setTip('')
     setPeople('')

@@ -21,6 +21,7 @@ const Form = ({
 			document.getElementById('custom').value = ''
 		}
 	}
+	
 
 	return (
 		<div className='form'>
@@ -29,7 +30,6 @@ const Form = ({
 					<label className='label' htmlFor='bill'>
 						Bill
 					</label>
-					{/* <p className='error'>{showBillAmtError ? "Please enter numbers only" : ""}</p> */}
 				</div>
 				<div className='number-wrapper'>
 					<input
